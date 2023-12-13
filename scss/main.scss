@@ -1,5 +1,10 @@
 @use "variables" as v;
 @use "reset";
+@use 'mixin' as m;
+
+html {
+    scroll-behavior:smooth;
+}
 
 .header {
     background-color: rgba(0, 0, 0, 0.753);
@@ -7,24 +12,24 @@
     z-index: 0;
 
 
-    
+
     .down-arrow {
         color: white;
         position: absolute;
-        top: calc(100vh - 60px);
-        left: calc(50% - 14px);
+        top: 45rem;
+        left: 50%;
         width: 0;
         height: 30px;
         border: 2px solid;
         border-radius: 2px;
         animation: jumpInfinite 1.5s infinite;
-      }
-      
-      .down-arrow:after {
+    }
+
+    .down-arrow:after {
         content: " ";
         position: absolute;
         top: 12px;
-        left: -10px;
+        left: -8px;
         width: 16px;
         height: 16px;
         border-bottom: 4px solid;
@@ -38,7 +43,7 @@
             z-index: -1;
             position: absolute;
         }
-      }
+    }
 
 
     .header-container {
@@ -61,7 +66,7 @@
             justify-content: space-around;
             color: white;
 
-            a{
+            a {
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: bold;
@@ -69,28 +74,25 @@
                 font-style: none;
                 margin: 0 1rem;
             }
-            
+
         }
     }
 }
 
 .recettes {
-    
-    .titre-recettes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 3rem 0;
+
+    .titre {
+        @include m.section-titles;
     }
+
     .btn {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         text-transform: uppercase;
+
         button {
+            font-size: 1.5rem;
             border: none;
             background-color: #D2CFC3;
             padding: 0.7rem;
@@ -98,65 +100,348 @@
             border-radius: 1.5rem;
         }
     }
+
     .cards {
-            display: flex;
-            justify-content: space-between;
-            margin: 3rem;
-            
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 3rem;
+    }
 
-        .card1 {
-            display: flex;
-            flex-direction: column;
-            background-color: #E20614;
-            border-radius: 2rem;
-            color: white;
-            max-width: 40rem;
 
-            header {
+    .card1 {
+        display: flex;
+        flex-direction: column;
+        background-color: #E20614;
+        border-radius: 0.5rem;
+        color: white;
+        max-width: 40rem;
+        margin-bottom: 3rem;
+
+        header {
+            div {
+                border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0 2rem;
-                p {
-                    margin: 0.5rem;
-                    font-size: 3rem;
-                    
-                }
-            }
-            hr {
-                width: auto;
-                margin: 0 2rem;
+                padding: 1rem 1rem 0 1rem;
 
-            }
-            .infos {
-                padding: 0 2rem ;
-            }
-            .btn-card {
-                display: flex;
-                justify-content: space-between;
-                padding: 0 2rem;
-                
-                .btn1 {
-                    border: none;
-                    background-color: rgba(0, 0, 0, 0.23);
-                    color: white;
-                    border-radius: 2rem;
-                    text-transform: uppercase;
-                    padding: 1rem;
+                p {
+                    font-size: 3rem;
+                    padding: 0;
+                    margin: 0;
                 }
+
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        hr {
+            color: white;
+            width: auto;
+            height: 0.1rem;
+            margin: 0 2rem;
+            background-color: white;
+        }
+
+        .infos {
+            padding: 0 2rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .btn-card {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            margin-bottom: 1rem;
+
+            .btn1 {
+                border: none;
+                background-color: rgba(0, 0, 0, 0.23);
+                color: white;
+                border-radius: 2rem;
+                text-transform: uppercase;
+                padding: 0.5rem 1rem;
+            }
+
+            .btn2 {
+                border: none;
+                background-color: rgba(0, 0, 0, 0);
+                color: white;
+                border-radius: 2rem;
+                text-transform: uppercase;
             }
         }
     }
 
-    @keyframes jumpInfinite {
-        0% {
-          margin-top: 0;
+    .card2 {
+        display: flex;
+        flex-direction: column;
+        background-color: #A0C525;
+        border-radius: 0.5rem;
+        color: white;
+        max-width: 40rem;
+        margin-bottom: 3rem;
+
+        header {
+            div {
+                border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem 1rem 0 1rem;
+
+                p {
+                    font-size: 3rem;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                i {
+                    font-size: 2.5rem;
+                }
+            }
         }
-        50% {
-          margin-top: 20px;
+
+        hr {
+            color: white;
+            width: auto;
+            height: 0.1rem;
+            margin: 0 2rem;
+            background-color: white;
         }
-        100% {
-          margin-top: 0;
+
+        .infos {
+            padding: 0 2rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
         }
-      }
+
+        .btn-card {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            margin-bottom: 1rem;
+
+            .btn1 {
+                border: none;
+                background-color: rgba(0, 0, 0, 0.23);
+                color: white;
+                border-radius: 2rem;
+                text-transform: uppercase;
+                padding: 0.5rem 1rem;
+            }
+
+            .btn2 {
+                border: none;
+                background-color: rgba(0, 0, 0, 0);
+                color: white;
+                border-radius: 2rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .card3 {
+        display: flex;
+        flex-direction: column;
+        background-color: #C94C05;
+        border-radius: 0.5rem;
+        color: white;
+        max-width: 40rem;
+
+        header {
+            div {
+                border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem 1rem 0 1rem;
+
+                p {
+                    font-size: 3rem;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        hr {
+            color: white;
+            width: auto;
+            height: 0.1rem;
+            margin: 0 2rem;
+            background-color: white;
+        }
+
+        .infos {
+            padding: 0 2rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .btn-card {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            margin-bottom: 1rem;
+
+            .btn1 {
+                border: none;
+                background-color: rgba(0, 0, 0, 0.23);
+                color: white;
+                border-radius: 2rem;
+                text-transform: uppercase;
+                padding: 0.5rem 1rem;
+            }
+
+            .btn2 {
+                border: none;
+                background-color: rgba(0, 0, 0, 0);
+                color: white;
+                border-radius: 2rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+
+
+
+}
+
+.banner-container {
+    background-color: #D2CFC3;
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.references {
+
+    .titre {
+        @include m.section-titles;
+    }
+
+    main {
+        display: flex;
+        flex-basis: 49%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+
+        .ref {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .titre-references {
+                font-size: 1.3rem;
+                border-bottom: solid black 1px;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin: auto;
+                margin-bottom: 2rem;
+            }
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 3rem;
+        }
+
+        .disclaimer {
+            margin: 0 10rem 3rem 10rem;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
+
+.carousel {
+    #carouselIndicators {
+        .carousel-indicators {
+            >li {
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #464646 ;
+
+    section {
+        display: flex;
+justify-content: space-around;
+
+    }
+    form {
+        
+        div {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem;
+            input, select {
+                padding: 0.7rem;
+                text-transform: uppercase;
+            }
+            
+        }
+
+
+
+    }
+}
+
+// footer {
+//     display: flex;
+//     justify-content: center;
+//     background-color: #464646;
+//     padding: 5rem;
+
+//     .contact {
+//         h2 {
+//             @include m.footer-titles;
+//         }
+//         form {
+//             color: white
+//         }
+//     }
+
+//     .maps {
+//         h2 {
+//             @include m.footer-titles;
+//         }
+//     }
+// }
+
+@keyframes jumpInfinite {
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 20px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
 }

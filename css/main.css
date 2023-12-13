@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
   background-color: rgba(0, 0, 0, 0.753);
   position: relative;
@@ -20,8 +24,8 @@ body {
 .header .down-arrow {
   color: white;
   position: absolute;
-  top: calc(100vh - 60px);
-  left: calc(50% - 14px);
+  top: 45rem;
+  left: 50%;
   width: 0;
   height: 30px;
   border: 2px solid;
@@ -32,7 +36,7 @@ body {
   content: " ";
   position: absolute;
   top: 12px;
-  left: -10px;
+  left: -8px;
   width: 16px;
   height: 16px;
   border-bottom: 4px solid;
@@ -73,7 +77,7 @@ body {
   margin: 0 1rem;
 }
 
-.recettes .titre-recettes {
+.recettes .titre {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,6 +93,7 @@ body {
   text-transform: uppercase;
 }
 .recettes .btn button {
+  font-size: 1.5rem;
   border: none;
   background-color: #D2CFC3;
   padding: 0.7rem;
@@ -97,47 +102,254 @@ body {
 }
 .recettes .cards {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 3rem;
 }
-.recettes .cards .card1 {
+.recettes .card1 {
   display: flex;
   flex-direction: column;
   background-color: #E20614;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   color: white;
   max-width: 40rem;
+  margin-bottom: 3rem;
 }
-.recettes .cards .card1 header {
+.recettes .card1 header div {
+  border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 1rem 1rem 0 1rem;
 }
-.recettes .cards .card1 header p {
-  margin: 0.5rem;
+.recettes .card1 header div p {
   font-size: 3rem;
+  padding: 0;
+  margin: 0;
 }
-.recettes .cards .card1 hr {
+.recettes .card1 header div i {
+  font-size: 2.5rem;
+}
+.recettes .card1 hr {
+  color: white;
   width: auto;
+  height: 0.1rem;
   margin: 0 2rem;
+  background-color: white;
 }
-.recettes .cards .card1 .infos {
+.recettes .card1 .infos {
   padding: 0 2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }
-.recettes .cards .card1 .btn-card {
+.recettes .card1 .btn-card {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
+  margin-bottom: 1rem;
 }
-.recettes .cards .card1 .btn-card .btn1 {
+.recettes .card1 .btn-card .btn1 {
   border: none;
   background-color: rgba(0, 0, 0, 0.23);
   color: white;
   border-radius: 2rem;
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
+.recettes .card1 .btn-card .btn2 {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-radius: 2rem;
+  text-transform: uppercase;
+}
+.recettes .card2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #A0C525;
+  border-radius: 0.5rem;
+  color: white;
+  max-width: 40rem;
+  margin-bottom: 3rem;
+}
+.recettes .card2 header div {
+  border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 1rem;
+}
+.recettes .card2 header div p {
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+}
+.recettes .card2 header div i {
+  font-size: 2.5rem;
+}
+.recettes .card2 hr {
+  color: white;
+  width: auto;
+  height: 0.1rem;
+  margin: 0 2rem;
+  background-color: white;
+}
+.recettes .card2 .infos {
+  padding: 0 2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.recettes .card2 .btn-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+.recettes .card2 .btn-card .btn1 {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.23);
+  color: white;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+}
+.recettes .card2 .btn-card .btn2 {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-radius: 2rem;
+  text-transform: uppercase;
+}
+.recettes .card3 {
+  display: flex;
+  flex-direction: column;
+  background-color: #C94C05;
+  border-radius: 0.5rem;
+  color: white;
+  max-width: 40rem;
+}
+.recettes .card3 header div {
+  border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 1rem;
+}
+.recettes .card3 header div p {
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+}
+.recettes .card3 header div i {
+  font-size: 2.5rem;
+}
+.recettes .card3 hr {
+  color: white;
+  width: auto;
+  height: 0.1rem;
+  margin: 0 2rem;
+  background-color: white;
+}
+.recettes .card3 .infos {
+  padding: 0 2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.recettes .card3 .btn-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+.recettes .card3 .btn-card .btn1 {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.23);
+  color: white;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+}
+.recettes .card3 .btn-card .btn2 {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-radius: 2rem;
+  text-transform: uppercase;
+}
+
+.banner-container {
+  background-color: #D2CFC3;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.references .titre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 3rem 0;
+}
+.references main {
+  display: flex;
+  flex-basis: 49%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+.references main .ref {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.references main .ref .titre-references {
+  font-size: 1.3rem;
+  border-bottom: solid black 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.references main img {
+  width: 150px;
+  margin-bottom: 3rem;
+}
+.references main .disclaimer {
+  margin: 0 10rem 3rem 10rem;
+  font-size: 1.3rem;
+}
+
+.carousel #carouselIndicators .carousel-indicators > li {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+footer {
+  background-color: #464646;
+}
+footer section {
+  display: flex;
+  justify-content: space-around;
+}
+footer form div {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem;
+}
+footer form div input, footer form div select {
+  padding: 0.7rem;
+  text-transform: uppercase;
+}
+
 @keyframes jumpInfinite {
   0% {
     margin-top: 0;
