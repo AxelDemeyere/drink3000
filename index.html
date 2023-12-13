@@ -14,7 +14,7 @@
     <section>
         <header>
             <div>
-                <h1>Drink 3000</h1>
+                <h1><i class="fa-solid fa-martini-glass" style="color: #000000;"></i>Drink 3000</h1>
             </div>
             <nav>
                 <a href="">Recette</a>
@@ -28,17 +28,93 @@
     </section>
 
 
-
-<!-- Recettes -->
+    <!-- Recettes -->
     <section>
         <div>Nos recettes</div>
-    </section>
+        <div class="btn">
+            <button>Energisante</button>
+            <button>Désaltérante</button>
+        </div>
 
+        <div class="cards">
+            <div>
+                <header>
+                    <p>Original</p>
+                    <i class="fa-solid fa-bolt"></i>
+                </header>
+                <hr>
+                <div>
+                    <p>Boisson énergisante gazuse, à la taurine et chargée en caféine</p>
+                </div>
+                <div class="btn-card">
+                    <button>Plus d'info</button>
+                    <button>Sélectionner</button>
+                </div>
+            </div>
+
+            <div>
+                <header>
+                    <p>Mojito</p>
+                    <i class="fa-solid fa-bolt"></i>
+                </header>
+                <hr>
+                <div>
+                    <p>Boisson énergisante gazuse,saveur mojito à la caféine et sans alcool</p>
+                </div>
+                <div class="btn-card">
+                    <button>Plus d'info</button>
+                    <button>Sélectionner</button>
+                </div>
+            </div>
+
+            <div>
+                <header>
+                    <p>Tropical</p>
+                    <i class="fa-solid fa-snowflake"></i>
+                </header>
+                <hr>
+                <div>
+                    <p>BOisson énergisante gazuse, aux fruits, taurine, caféine et extrait de gingembre</p>
+                </div>
+                <div class="btn-card">
+                    <button>Plus d'info</button>
+                    <button>Sélectionner</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-container">
+            <p>Votre choix :</p>
+            <p class="choice"></p>
+        </div>
+    </section>
 
 
     <!-- Références -->
     <section>
-        <h1>nos références</h1>
+        <header>
+            <h1>nos références</h1>
+        </header>
+        <main>
+            <div>
+                <p>Cafés, hôtels, restaurant</p>
+                <img src="" alt="">
+            </div>
+            <div>
+                <p>Marques</p>
+                <img src="" alt="">
+            </div>
+            <div>
+                <p>Associations, écoles</p>
+                <img src="" alt="">
+            </div>
+            <p>Toute s les marques commerciales déposées ou non déposées citées dans ce document sont la propriété
+                exclusive de leurs détenteurs respectifs</p>
+            <div>
+                <p>Publicités par l'objet</p>
+                <img src="" alt="">
+            </div>
+        </main>
     </section>
 
     <!-- Caroussel -->
@@ -48,7 +124,28 @@
     <!-- Footer -->
     <footer>
         <div class="contact">
-            <h2>Nous contacter ?</h2>
+            <div>
+                <h2>Nous contacter ?</h2>
+            </div>
+            <form action="">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div>
+                    <label for="object">Objet de la demande</label>
+                    <select name="object" id="object">
+                        <option disabled selected>Choix :</option>
+                        <option value="particulier">Particulier</option>
+                        <option value="profesionnel">Profesionnel</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="demande">Votre demande</label>
+                    <textarea name="demande" id="demande" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
         </div>
 
         <div class="maps">
