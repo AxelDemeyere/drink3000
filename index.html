@@ -11,10 +11,11 @@
 <body>
 
     <!-- Header -->
-    <section>
-        <header>
-            <div>
-                <h1><i class="fa-solid fa-martini-glass" style="color: #000000;"></i>Drink 3000</h1>
+    <section class="header">
+        <div class="down-arrow"><a href="#recettes" class="scroll-anchor"></a></div>
+        <header class="header-container">
+            <div class="logo">
+                <h1><i class="fa-solid fa-martini-glass" style="color: #ffffff;"></i>Drink 3000</h1>
             </div>
             <nav>
                 <a href="">Recette</a>
@@ -22,37 +23,35 @@
                 <a href="">contact</a>
             </nav>
         </header>
-        <div>
-            <p>Découvrez nos boissons énergisantes</p>
-        </div>
+        <video src="./vid/webm/Pour.webm" autoplay></video>
     </section>
 
 
     <!-- Recettes -->
-    <section>
-        <div>Nos recettes</div>
+    <section class="recettes" id="recettes">
+        <div class="titre-recettes">Nos recettes</div>
         <div class="btn">
             <button>Energisante</button>
             <button>Désaltérante</button>
         </div>
 
         <div class="cards">
-            <div>
+            <div class="card1">
                 <header>
                     <p>Original</p>
                     <i class="fa-solid fa-bolt"></i>
                 </header>
                 <hr>
-                <div>
-                    <p>Boisson énergisante gazuse, à la taurine et chargée en caféine</p>
+                <div class="infos">
+                    <p>Boisson énergisante gazeuse, à la taurine et chargée en caféine</p>
                 </div>
                 <div class="btn-card">
-                    <button>Plus d'info</button>
-                    <button>Sélectionner</button>
+                    <button class="btn1">Plus d'info</button>
+                    <button class="btn2">Sélectionner</button>
                 </div>
             </div>
 
-            <div>
+            <div class="card2">
                 <header>
                     <p>Mojito</p>
                     <i class="fa-solid fa-bolt"></i>
@@ -67,14 +66,14 @@
                 </div>
             </div>
 
-            <div>
+            <div class="card3">
                 <header>
                     <p>Tropical</p>
                     <i class="fa-solid fa-snowflake"></i>
                 </header>
                 <hr>
                 <div>
-                    <p>BOisson énergisante gazuse, aux fruits, taurine, caféine et extrait de gingembre</p>
+                    <p>Boisson énergisante gazeuse, aux fruits, taurine, caféine et extrait de gingembre</p>
                 </div>
                 <div class="btn-card">
                     <button>Plus d'info</button>
@@ -91,7 +90,7 @@
 
 
     <!-- Références -->
-    <section>
+    <section class="references">
         <header>
             <h1>nos références</h1>
         </header>
@@ -150,6 +149,7 @@
 
         <div class="maps">
             <h2>Où sommes-nous ?</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20247.24938208072!2d3.06215325!3d50.628859799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1702470878275!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </footer>
 </body>

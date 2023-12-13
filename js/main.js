@@ -5,3 +5,12 @@ function scrollFunction() {
       document.querySelector("navbar").style.top = "-50px";
     }
   }
+
+  document.querySelector('.down-arrow').addEventListener('click', function (event) {
+    event.preventDefault();
+    const targetElement = document.querySelector('.scroll-anchor');
+    window.scrollTo({
+      bottom: targetElement.offsetTop,
+      behavior: 'smooth'
+    });
+  });
