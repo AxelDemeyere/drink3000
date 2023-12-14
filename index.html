@@ -13,30 +13,55 @@
 <body>
 
     <!-- Header -->
+
     <section class="header">
         <header class="header-container">
             <div class="logo">
-                <h1><i class="fa-solid fa-martini-glass" style="color: #ffffff;"></i>Drink 3000</h1>
+                <h1><i class="fa-solid fa-martini-glass"></i>Drink 3000</h1>
             </div>
-            <nav>
+            <nav class="navbar">
                 <a href="#recettes">Recettes</a>
                 <a href="#references">Références</a>
-                <a href="#contact">contact</a>
-            </nav>        
-            
+                <a href="#contact">Contact</a>
+            </nav>
+            <nav class="menu-burger">
+
+                <a class="navbar-brand" href="#"></a>
+
+                <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="dark-blue-text"><i
+                            class="fas fa-bars fa-1x"></i></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#recettes">Recettes<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#references">Références</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </header>
 
-    </section>        
-    
+    </section>
 
-    <!-- End Header -->
+
+
+
     <div>
-    <video id="background" src="./vid/webm/Pour.webm" autoplay loop muted></video>
-    <div class="down-arrow" id="scroll-anchor"><a href="#recettes" class="scroll-anchor"></a></div>
-</div>
+        <video id="background" src="./vid/webm/Pour.webm" autoplay loop muted></video>
+        <div class="down-arrow" id="scroll-anchor"><a href="#recettes" class="scroll-anchor"></a></div>
+    </div>
 
 
-    <!-- Recettes -->
+    <!-- Recettes --> 
     <section class="recettes" id="recettes">
         <div class="titre">Nos recettes</div>
         <div class="btn">
@@ -141,13 +166,13 @@
                 <div class="titre-references">
                     <p class="titre-references">Publicités par l'objet</p>
                 </div>
-                    <div>
-                        <img src="./img/references/pub1.png" alt="">
-                        <img src="./img/references/pub2.png" alt="">
-                        <img src="./img/references/pub3.png" alt="">
-                    </div>
+                <div>
+                    <img src="./img/references/pub1.png" alt="">
+                    <img src="./img/references/pub2.png" alt="">
+                    <img src="./img/references/pub3.png" alt="">
+                </div>
             </div>
-                
+
         </main>
     </section>
 

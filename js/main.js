@@ -7,11 +7,14 @@ const drinks = {
 
 /* Pour navbar en scrollant */
 function scrollFunction() {
-    navbar = document.querySelector(".header-container nav");
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        navbar.style.top = "0";
+    navbar = document.querySelector(".header");
+    header = document.querySelector(".header-logo");
+    if (document.documentElement.scrollTop < 200) {
+        navbar.style.display = "none";
+        
     } else {
-        navbar.style.top = "-50px";
+        navbar.style.display = "flex";
+        header.style.display = "none";
     }
 }
 
@@ -38,14 +41,6 @@ document.getElementById('scroll-anchor').addEventListener('click', function (eve
 }
 
 displayChoice();
-
-/* 
-exemple de désactivation de bouton/list etc...
-
-function myFunction() {
-  document.getElementById("mySelect").disabled = true;
-*/
-
 
 
 
