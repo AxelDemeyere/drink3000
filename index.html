@@ -65,21 +65,21 @@
     <section class="recettes" id="recettes">
         <div class="titre">Nos recettes</div>
         <div class="btn">
-            <button>Energisante</button>
-            <button>Désaltérante</button>
+            <button class="energyCat">Energisante</button>
+            <button class="freshCat">Désaltérante</button>
         </div>
 
         <div class="cards">
             <section>
-                <div class="card1">
+                <div class="card" id="card1">
                     <header>
                         <div>
-                            <p class="energy">Original</p>
+                            <p class="name">Original</p>
                             <i class="fa-solid fa-bolt"></i>
                         </div>
                     </header>
                     <div class="infos">
-                        <p>Boisson énergisante gazeuse, à la taurine et chargée en caféine</p>
+                        <p>Boisson énergisante gazeuse, à la taurine et chargée en caféine !</p>
                     </div>
                     <div class="btn-card">
                         <button class="btn1">Plus d'info</button>
@@ -88,15 +88,15 @@
                 </div>
 
 
-                <div class="card2">
+                <div class="card" id="card2">
                     <header>
                         <div>
-                            <p class="fresh">Mojito</p>
-                            <i class="fa-solid fa-bolt"></i>
+                            <p class="name">Mojito</p>
+                            <i class="fa-solid fa-snowflake"></i>
                         </div>
                     </header>
                     <div class="infos">
-                        <p>Boisson énergisante gazeuse, saveur mojito à la caféine et sans alcool</p>
+                        <p>Boisson raffraîchissante gazeuse, saveur mojito à la caféine et avec alcool !</p>
                     </div>
                     <div class="btn-card">
                         <button class="btn1">Plus d'info</button>
@@ -105,19 +105,19 @@
                 </div>
 
 
-                <div class="card3">
+                <div class="card" id="card3">
                     <header>
                         <div>
-                            <p class="energy">Tropical</p>
+                            <p class="name">Tropical</p>
                             <i class="fa-solid fa-bolt"></i>
                         </div>
                     </header>
                     <div class="infos">
-                        <p>Boisson énergisante gazeuse, saveur mojito à la caféine et sans alcool</p>
+                        <p>Boisson énergisante gazeuse, saveur MERDE !</p>
                     </div>
                     <div class="btn-card">
                         <button class="btn1">Plus d'info</button>
-                        <button class="btn2" id="btnm">Sélectionner</button>
+                        <button class="btn2">Sélectionner</button>
                     </div>
                 </div>
             </section>
@@ -126,7 +126,8 @@
 
         <div class="banner-container">
             <h3>Votre choix :</h3>
-            <p class="choice"></p>
+            <h4 class="titleChoice"></h4>
+            <p class="choice">Aucune boisson sélectionnée</p>
         </div>
     </section>
 
@@ -266,7 +267,6 @@
             </div>
         </section>
     </footer>
-</body>
 
 <script src="js/main.js"></script>
 <script src="https://kit.fontawesome.com/477e17b079.js" crossorigin="anonymous"></script>

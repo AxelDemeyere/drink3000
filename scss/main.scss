@@ -32,7 +32,7 @@ html {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(1px);
         min-width: 100vw;
         padding: 2rem 5rem;
@@ -47,9 +47,11 @@ html {
         // Navbar à droite
         .navbar {
             color: white;
+
             @media screen and (max-width: v.$lg-breakpoint) {
                 display: none;
             }
+
             a {
                 font-size: 1.5rem;
                 font-family: gilroy;
@@ -61,26 +63,29 @@ html {
                 margin: 0 1rem;
             }
 
-            
+
         }
+
         .menu-burger {
-                @media screen and (min-width: v.$lg-breakpoint) {
-                    display: none;
-                }
-                a {
-                    font-size: 1.5rem;
-                    font-family: gilroy;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    color: white;
-                    font-style: none;
-                    margin: 0 1rem;
-                }
-                i {
-                    color: white;
-                }
+            @media screen and (min-width: v.$lg-breakpoint) {
+                display: none;
             }
+
+            a {
+                font-size: 1.5rem;
+                font-family: gilroy;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: white;
+                font-style: none;
+                margin: 0 1rem;
+            }
+
+            i {
+                color: white;
+            }
+        }
 
         @keyframes slideDown {
             from {
@@ -94,518 +99,544 @@ html {
     }
 }
 
-    // Vidéo header + flèche
-    div {
-        position: relative;
+// Vidéo header + flèche
+div {
+    position: relative;
 
-        // Video
-        #background {
-            height: 100vh;
+    // Video
+    #background {
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    // Flèche
+    .down-arrow {
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        right: 50%;
+        top: 90%;
+        width: 0;
+        height: 30px;
+        border: 2px solid;
+        border-radius: 2px;
+        animation: jumpInfinite 1.5s infinite;
+    }
+
+    .down-arrow:after {
+        content: " ";
+        position: absolute;
+        top: 12px;
+        left: -8px;
+        width: 16px;
+        height: 16px;
+        border-bottom: 4px solid;
+        border-right: 4px solid;
+        border-radius: 4px;
+        transform: rotateZ(45deg);
+        cursor: pointer;
+
+        video {
             width: 100%;
-            object-fit: cover;
-            z-index: -1;
+            max-height: 110vh;
+            z-index: 0;
         }
-
-        // Flèche
-        .down-arrow {
-            color: white;
-            position: absolute;
-            right: 50%;
-            top: 90%;
-            width: 0;
-            height: 30px;
-            border: 2px solid;
-            border-radius: 2px;
-            animation: jumpInfinite 1.5s infinite;
-        }
-
-        .down-arrow:after {
-            content: " ";
-            position: absolute;
-            top: 12px;
-            left: -8px;
-            width: 16px;
-            height: 16px;
-            border-bottom: 4px solid;
-            border-right: 4px solid;
-            border-radius: 4px;
-            transform: rotateZ(45deg);
-
-            video {
-                width: 100%;
-                max-height: 110vh;
-                z-index: 0;
-            }
-        }
-
-        @keyframes jumpInfinite {
-            0% {
-                margin-top: 0;
-            }
-
-            50% {
-                margin-top: 20px;
-            }
-
-            100% {
-                margin-top: 0;
-            }
-        }
-
     }
 
-
-    // Recettes
-    .recettes {
-        .titre {
-            @include m.section-titles;
+    @keyframes jumpInfinite {
+        0% {
+            margin-top: 0;
         }
 
-        .btn {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            text-transform: uppercase;
-
-            button {
-                font-size: 1.5rem;
-                border: none;
-                background-color: #D2CFC3;
-                padding: 0.7rem;
-                text-transform: uppercase;
-                border-radius: 1.5rem;
-            }
+        50% {
+            margin-top: 20px;
         }
 
-        .cards {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: column;
-            min-height: 65vh;
+        100% {
+            margin-top: 0;
         }
-
-
-
-
-
-        section {
-            margin-top: 2rem;
-
-            @media screen and (min-width: v.$lg-breakpoint) {
-                display: flex;
-                gap: 5rem;
-            }
-
-            .card1 {
-                display: flex;
-                flex-direction: column;
-                box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
-                background-color: #E20614;
-                border-radius: 0.5rem;
-                color: white;
-                max-width: 40rem;
-                margin-bottom: 3rem;
-                transition: transform .2s;
-
-
-                header {
-                    div {
-                        border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        padding: 1rem 1rem 0 1rem;
-
-                        p {
-                            font-size: 3rem;
-                            padding: 0;
-                            margin: 0;
-                        }
-
-                        i {
-                            font-size: 2.5rem;
-                        }
-                    }
-                }
-
-                hr {
-                    color: white;
-                    width: auto;
-                    height: 0.1rem;
-                    margin: 0 2rem;
-                    background-color: white;
-                }
-
-                .infos {
-                    padding: 0 2rem;
-                    margin-top: 1rem;
-                    font-size: 1.5rem;
-                }
-
-                .btn-card {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 0 2rem;
-                    margin-bottom: 1rem;
-
-                    .btn1 {
-                        border: none;
-                        background-color: rgba(0, 0, 0, 0.23);
-                        color: white;
-                        border-radius: 2rem;
-                        text-transform: uppercase;
-                        padding: 0.5rem 1rem;
-                    }
-
-                    .btn2 {
-                        border: none;
-                        background-color: rgba(0, 0, 0, 0);
-                        color: white;
-                        border-radius: 2rem;
-                        text-transform: uppercase;
-                    }
-
-                }
-            }
-            .card1:hover {
-                transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-              }
-
-            .card2 {
-                display: flex;
-                box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
-                flex-direction: column;
-                background-color: #A0C525;
-                border-radius: 0.5rem;
-                color: white;
-                max-width: 40rem;
-                margin-bottom: 3rem;
-                transition: transform .2s;
-
-
-                header {
-                    div {
-                        border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        padding: 1rem 1rem 0 1rem;
-
-                        p {
-                            font-size: 3rem;
-                            padding: 0;
-                            margin: 0;
-                        }
-
-                        i {
-                            font-size: 2.5rem;
-                        }
-                    }
-                }
-
-                hr {
-                    color: white;
-                    width: auto;
-                    height: 0.1rem;
-                    margin: 0 2rem;
-                    background-color: white;
-                }
-
-                .infos {
-                    padding: 0 2rem;
-                    margin-top: 1rem;
-                    font-size: 1.5rem;
-                }
-
-                .btn-card {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 0 2rem;
-                    margin-bottom: 1rem;
-
-                    .btn1 {
-                        border: none;
-                        background-color: rgba(0, 0, 0, 0.23);
-                        color: white;
-                        border-radius: 2rem;
-                        text-transform: uppercase;
-                        padding: 0.5rem 1rem;
-                    }
-
-                    .btn2 {
-                        border: none;
-                        background-color: rgba(0, 0, 0, 0);
-                        color: white;
-                        border-radius: 2rem;
-                        text-transform: uppercase;
-                    }
-                }
-            }
-
-            .card2:hover {
-                transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-              }
-
-            .card3 {
-                display: flex;
-                box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
-                flex-direction: column;
-                background-color: #C94C05;
-                border-radius: 0.5rem;
-                color: white;
-                max-width: 40rem;
-                margin-bottom: 3rem;
-                transition: transform .2s;
-
-
-                header {
-                    div {
-                        border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        padding: 1rem 1rem 0 1rem;
-
-                        p {
-                            font-size: 3rem;
-                            padding: 0;
-                            margin: 0;
-                        }
-
-                        i {
-                            font-size: 2.5rem;
-                        }
-                    }
-                }
-
-                hr {
-                    color: white;
-                    width: auto;
-                    height: 0.1rem;
-                    margin: 0 2rem;
-                    background-color: white;
-                }
-
-                .infos {
-                    padding: 0 2rem;
-                    margin-top: 1rem;
-                    font-size: 1.5rem;
-                }
-
-                .btn-card {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 0 2rem;
-                    margin-bottom: 1rem;
-
-                    .btn1 {
-                        border: none;
-                        background-color: rgba(0, 0, 0, 0.23);
-                        color: white;
-                        border-radius: 2rem;
-                        text-transform: uppercase;
-                        padding: 0.5rem 1rem;
-                    }
-
-                    .btn2 {
-                        border: none;
-                        background-color: rgba(0, 0, 0, 0);
-                        color: white;
-                        border-radius: 2rem;
-                        text-transform: uppercase;
-                    }
-                }
-            }
-            .card3:hover {
-                transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-              }
-        }
-
-
-
     }
 
-    // Banniere info "panier"
-    .banner-container {
-        background-color: #D2CFC3;
-        height: 15rem;
+}
+
+
+// Recettes
+.recettes {
+    .titre {
+        @include m.section-titles;
+    }
+
+    .btn {
         display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-transform: uppercase;
+
+        button {
+            font-size: 1.5rem;
+            border: none;
+            background-color: #D2CFC3;
+            padding: 0.7rem;
+            text-transform: uppercase;
+            border-radius: 1.5rem;
+        }
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        min-height: 65vh;
+    }
+
+
+
+
+
+    section {
+        margin-top: 2rem;
+
+        @media screen and (min-width: v.$lg-breakpoint) {
+            display: flex;
+            gap: 5rem;
+        }
+
+        #card1 {
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
+            background-color: #E20614;
+            border-radius: 0.5rem;
+            color: white;
+            max-width: 40rem;
+            margin-bottom: 3rem;
+            transition: transform .2s;
+
+
+            header {
+                div {
+                    border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem 1rem 0 1rem;
+
+                    p {
+                        font-size: 3rem;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    i {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+
+            hr {
+                color: white;
+                width: auto;
+                height: 0.1rem;
+                margin: 0 2rem;
+                background-color: white;
+            }
+
+            .infos {
+                padding: 0 2rem;
+                margin-top: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .btn-card {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 2rem;
+                margin-bottom: 1rem;
+
+                .btn1 {
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0.23);
+                    color: white;
+                    border-radius: 2rem;
+                    text-transform: uppercase;
+                    padding: 0.5rem 1rem;
+                }
+
+                .btn2 {
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0);
+                    color: white;
+                    border-radius: 2rem;
+                    text-transform: uppercase;
+                }
+
+            }
+        }
+
+        #card1:hover {
+            transform: scale(1.1);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+
+        #card2 {
+            display: flex;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            background-color: #A0C525;
+            border-radius: 0.5rem;
+            color: white;
+            max-width: 40rem;
+            margin-bottom: 3rem;
+            transition: transform .2s;
+
+
+            header {
+                div {
+                    border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem 1rem 0 1rem;
+
+                    p {
+                        font-size: 3rem;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    i {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+
+            hr {
+                color: white;
+                width: auto;
+                height: 0.1rem;
+                margin: 0 2rem;
+                background-color: white;
+            }
+
+            .infos {
+                padding: 0 2rem;
+                margin-top: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .btn-card {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 2rem;
+                margin-bottom: 1rem;
+
+                .btn1 {
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0.23);
+                    color: white;
+                    border-radius: 2rem;
+                    text-transform: uppercase;
+                    padding: 0.5rem 1rem;
+                }
+
+                .btn2 {
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0);
+                    color: white;
+                    border-radius: 2rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        #card2:hover {
+            transform: scale(1.1);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+
+        #card3 {
+            display: flex;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            background-color: #C94C05;
+            border-radius: 0.5rem;
+            color: white;
+            max-width: 40rem;
+            margin-bottom: 3rem;
+            transition: transform .2s;
+
+
+            header {
+                div {
+                    border-bottom: rgba(255, 255, 255, 0.515) solid 1px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem 1rem 0 1rem;
+
+                    p {
+                        font-size: 3rem;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    i {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+
+            hr {
+                color: white;
+                width: auto;
+                height: 0.1rem;
+                margin: 0 2rem;
+                background-color: white;
+            }
+
+            .infos {
+                padding: 0 2rem;
+                margin-top: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .btn-card {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 2rem;
+                margin-bottom: 1rem;
+
+                .btn1 {
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0.23);
+                    color: white;
+                    border-radius: 2rem;
+                    text-transform: uppercase;
+                    padding: 0.5rem 1rem;
+                }
+
+                .btn2 {
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0);
+                    color: white;
+                    border-radius: 2rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        #card3:hover {
+            transform: scale(1.1);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+    }
+
+
+
+}
+
+// Banniere info "panier"
+.banner-container {
+    background-color: #D2CFC3;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3{
+        font-size: 1.6rem;
+        padding-bottom: 2rem;
+    }
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .choice {
+        font-size: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+
+// Références
+.references {
+
+    .titre {
+        @include m.section-titles;
+    }
+
+    main {
+        min-height: 86vh;
+        display: flex;
+        flex-basis: 49%;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: auto;
+        text-align: center;
 
-    }
+        .ref-top {
+            @media screen and (min-width: v.$lg-breakpoint) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem 0;
+            }
 
+            .ref {
+                @media screen and (min-width: v.$lg-breakpoint) {
+                    display: flex;
+                    align-items: flex-start;
+                }
 
-    // Références
-    .references {
-
-        .titre {
-            @include m.section-titles;
+                margin-left: 2rem;
+            }
         }
 
-        main {
-            min-height: 86vh;
+        .ref-bot {
+            @media screen and (min-width: v.$lg-breakpoint) {
+                display: flex;
+                justify-content: center;
+                padding: 2rem 0;
+            }
+        }
+
+        .titre-references {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0 1rem 0 1rem;
+
+            p {
+                border-bottom: solid black 2px;
+            }
+        }
+
+
+        img {
+            width: 150px;
+            margin-bottom: 3rem;
+        }
+
+        .disclaimer {
+            margin: 0 10rem 3rem 10rem;
+            font-size: 1.3rem;
+            font-family: glyphicons;
+        }
+    }
+}
+
+
+// Carousel
+.carousel {
+
+    #carouselIndicators {
+        img {
+            height: 90rem;
+        }
+
+        .carousel-indicators {
+            >li {
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+
+// Footer
+footer {
+    padding: 5rem;
+    background-color: #464646;
+
+
+    section {
+        color: white;
+
+        @media screen and (min-width: v.$xl-breakpoint) {
             display: flex;
-            flex-basis: 49%;
+            justify-content: space-evenly;
+        }
+
+
+
+        div {
+            div {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 1rem;
+            }
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5rem;
+
+
+            .label {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: flex-start;
+                margin-right: 1.5rem;
+
+
+
+                label {
+                    margin-bottom: 2.5rem;
+                }
+            }
+
+            .input {
+                display: flex;
+                flex-direction: column;
+                border: none;
+                border-radius: 0.2rem;
+                min-width: 40rem;
+
+                input,
+                select {
+                    margin-bottom: 2rem;
+                }
+
+                text-transform: uppercase;
+            }
+
+            .btn-form {
+                display: flex;
+            }
+
+            button {
+                display: flex;
+                align-self: flex-end;
+                border: none;
+                background-color: #464646;
+                color: white;
+                text-transform: uppercase;
+            }
+
+        }
+
+        .map {
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: auto;
-            text-align: center;
 
-            .ref-top {
-                @media screen and (min-width: v.$lg-breakpoint) {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 2rem 0;
-                }
-
-                .ref {
-                    @media screen and (min-width: v.$lg-breakpoint) {
-                        display: flex;
-                        align-items: flex-start;
-                    }
-
-                    margin-left: 2rem;
-                }
-            }
-
-            .ref-bot {
-                @media screen and (min-width: v.$lg-breakpoint) {
-                    display: flex;
-                    justify-content: center;
-                    padding: 2rem 0;
-                }
-            }
-
-            .titre-references {
-                font-size: 1.3rem;
-                text-transform: uppercase;
-                font-weight: bold;
-                margin: 0 1rem 0 1rem;
-
-                p {
-                    border-bottom: solid black 2px;
-                }
-            }
-
-
-            img {
-                width: 150px;
-                margin-bottom: 3rem;
-            }
-
-            .disclaimer {
-                margin: 0 10rem 3rem 10rem;
-                font-size: 1.3rem;
-                font-family: glyphicons;
-            }
         }
     }
-
-
-    // Carousel
-    .carousel {
-
-        #carouselIndicators {
-            img {
-                height: 90rem;
-            }
-
-            .carousel-indicators {
-                >li {
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 100%;
-                }
-            }
-        }
-    }
-
-
-    // Footer
-    footer {
-        padding: 5rem;
-        background-color: #464646;
-
-
-        section {
-            color: white;
-
-            @media screen and (min-width: v.$xl-breakpoint) {
-                display: flex;
-                justify-content: space-evenly;
-            }
-
-
-
-            div {
-                div {
-                    display: flex;
-                    justify-content: center;
-                    padding-bottom: 1rem;
-                }
-
-            }
-
-            form {
-                display: flex;
-                flex-direction: column;
-                font-size: 1.5rem;
-
-
-                .label {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    justify-content: flex-start;
-                    margin-right: 1.5rem;
-
-
-
-                    label {
-                        margin-bottom: 2.5rem;
-                    }
-                }
-
-                .input {
-                    display: flex;
-                    flex-direction: column;
-                    border: none;
-                    border-radius: 0.2rem;
-                    min-width: 40rem;
-
-                    input,
-                    select {
-                        margin-bottom: 2rem;
-                    }
-
-                    text-transform: uppercase;
-                }
-
-                .btn-form {
-                    display: flex;
-                }
-
-                button {
-                    display: flex;
-                    align-self: flex-end;
-                    border: none;
-                    background-color: #464646;
-                    color: white;
-                    text-transform: uppercase;
-                }
-
-            }
-
-            .map {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-            }
-        }
-    }
+}

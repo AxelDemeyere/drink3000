@@ -46,7 +46,8 @@ html {
   align-items: center;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
   min-width: 100vw;
   padding: 2rem 5rem;
 }
@@ -105,7 +106,8 @@ div {
 div #background {
   height: 100vh;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: -1;
 }
 div .down-arrow {
@@ -539,6 +541,4 @@ footer section .map {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
