@@ -1,7 +1,13 @@
+const drinks = {
+    "1": "Original",
+    "2": "Mojito",
+    "3": "Tropical"
+};
+
 
 /* Pour navbar en scrollant */
 function scrollFunction() {
-    navbar = document.querySelector(".header-container");
+    navbar = document.querySelector(".header-container nav");
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         navbar.style.top = "0";
     } else {
@@ -20,21 +26,26 @@ document.getElementById('scroll-anchor').addEventListener('click', function (eve
 });
 
 
-/*Fonction sélection de boisson*/
+ /*Fonction sélection de boisson, doit fonctionner aussi sur les catégories*/
 
-function selectDrink(type) {
-    const cards = document.querySelectorAll('.cards');
+ function displayChoice() {
+    let btn2 = document.querySelector("#btnm");
+    let choice = document.querySelector(".choice");
 
-    cards.forEach(card => {
-        const cardtype = card.querySelector('header p').textContent;
-
-        if (cardtype == type) {
-            card.classList.add('selected');
-        } else {
-            card.classList.remove('selected');
-            card.classList.add('unavailable');
-            card.querySelector('infos p').textContent = "Non disponible, modifiez votre sélection pour sélectionner cette recette";
-        }
-    })
+    btn2.addEventListener("click", () => {
+        choice.innerHTML = `${drinks[2]}`;
+    });
 }
+
+displayChoice();
+
+/* 
+exemple de désactivation de bouton/list etc...
+
+function myFunction() {
+  document.getElementById("mySelect").disabled = true;
+*/
+
+
+
 

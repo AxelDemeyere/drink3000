@@ -14,7 +14,6 @@
 
     <!-- Header -->
     <section class="header">
-        <div class="down-arrow" id="scroll-anchor"><a href="#recettes" class="scroll-anchor"></a></div>
         <header class="header-container">
             <div class="logo">
                 <h1><i class="fa-solid fa-martini-glass" style="color: #ffffff;"></i>Drink 3000</h1>
@@ -23,11 +22,18 @@
                 <a href="#recettes">Recettes</a>
                 <a href="#references">Références</a>
                 <a href="#contact">contact</a>
-            </nav>
+            </nav>        
+            
         </header>
-        <div style="min-height: 500px;"><!-- <video src="./vid/webm/Pour.webm" autoplay></video> --></div>
 
-    </section>
+    </section>        
+    
+
+    <!-- End Header -->
+    <div>
+    <video id="background" src="./vid/webm/Pour.webm" autoplay loop muted></video>
+    <div class="down-arrow" id="scroll-anchor"><a href="#recettes" class="scroll-anchor"></a></div>
+</div>
 
 
     <!-- Recettes -->
@@ -39,55 +45,57 @@
         </div>
 
         <div class="cards">
-            <div class="card1">
-                <header>
-                    <div>
-                        <p class="energy">Original</p>
-                        <i class="fa-solid fa-bolt"></i>
+            <section>
+                <div class="card1">
+                    <header>
+                        <div>
+                            <p class="energy">Original</p>
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                    </header>
+                    <div class="infos">
+                        <p>Boisson énergisante gazeuse, à la taurine et chargée en caféine</p>
                     </div>
-                </header>
-                <div class="infos">
-                    <p>Boisson énergisante gazeuse, à la taurine et chargée en caféine</p>
-                </div>
-                <div class="btn-card">
-                    <button class="btn1">Plus d'info</button>
-                    <button class="btn2">Sélectionner</button>
-                </div>
-            </div>
-
-
-            <div class="card2">
-                <header>
-                    <div>
-                        <p class="fresh">Mojito</p>
-                        <i class="fa-solid fa-bolt"></i>
+                    <div class="btn-card">
+                        <button class="btn1">Plus d'info</button>
+                        <button class="btn2">Sélectionner</button>
                     </div>
-                </header>
-                <div class="infos">
-                    <p>Boisson énergisante gazeuse, saveur mojito à la caféine et sans alcool</p>
                 </div>
-                <div class="btn-card">
-                    <button class="btn1">Plus d'info</button>
-                    <button class="btn2">Sélectionner</button>
-                </div>
-            </div>
 
 
-            <div class="card3">
-                <header>
-                    <div>
-                        <p class="energy">Tropical</p>
-                        <i class="fa-solid fa-bolt"></i>
+                <div class="card2">
+                    <header>
+                        <div>
+                            <p class="fresh">Mojito</p>
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                    </header>
+                    <div class="infos">
+                        <p>Boisson énergisante gazeuse, saveur mojito à la caféine et sans alcool</p>
                     </div>
-                </header>
-                <div class="infos">
-                    <p>Boisson énergisante gazeuse, saveur mojito à la caféine et sans alcool</p>
+                    <div class="btn-card">
+                        <button class="btn1">Plus d'info</button>
+                        <button class="btn2">Sélectionner</button>
+                    </div>
                 </div>
-                <div class="btn-card">
-                    <button class="btn1">Plus d'info</button>
-                    <button class="btn2">Sélectionner</button>
+
+
+                <div class="card3">
+                    <header>
+                        <div>
+                            <p class="energy">Tropical</p>
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                    </header>
+                    <div class="infos">
+                        <p>Boisson énergisante gazeuse, saveur mojito à la caféine et sans alcool</p>
+                    </div>
+                    <div class="btn-card">
+                        <button class="btn1">Plus d'info</button>
+                        <button class="btn2" id="btnm">Sélectionner</button>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
         </div>
 
@@ -102,17 +110,25 @@
     <section class="references" id="references">
         <div class="titre">Nos références</div>
         <main>
-            <div class="ref">
-                <p class="titre-references">Cafés, hôtels, restaurant</p>
-                <img src="./img/references/asso.png" alt="">
-            </div>
-            <div class="ref">
-                <p class="titre-references">Marques</p>
-                <img src="./img/references/chr.png" alt="">
-            </div>
-            <div class="ref">
-                <p class="titre-references">Associations, écoles</p>
-                <img src="./img/references/marques.png" alt="">
+            <div class="ref-top">
+                <div class="ref">
+                    <div class="titre-references">
+                        <p>Cafés, hôtels, restaurant</p>
+                    </div>
+                    <img src="./img/references/asso.png" alt="">
+                </div>
+                <div class="ref">
+                    <div class="titre-references">
+                        <p>Marques</p>
+                    </div>
+                    <img src="./img/references/chr.png" alt="">
+                </div>
+                <div class="ref">
+                    <div class="titre-references">
+                        <p>Associations, écoles</p>
+                    </div>
+                    <img src="./img/references/marques.png" alt="">
+                </div>
             </div>
             <div class="disclaimer">
                 <p>
@@ -120,14 +136,18 @@
                     exclusive de leurs détenteurs respectifs
                 </p>
             </div>
-            <div class="ref">
-                <p class="titre-references">Publicités par l'objet</p>
-                <div>
-                    <img src="./img/references/pub1.png" alt="">
-                    <img src="./img/references/pub2.png" alt="">
-                    <img src="./img/references/pub3.png" alt="">
+
+            <div class="ref-bot">
+                <div class="titre-references">
+                    <p class="titre-references">Publicités par l'objet</p>
                 </div>
+                    <div>
+                        <img src="./img/references/pub1.png" alt="">
+                        <img src="./img/references/pub2.png" alt="">
+                        <img src="./img/references/pub3.png" alt="">
+                    </div>
             </div>
+                
         </main>
     </section>
 
@@ -182,38 +202,40 @@
                     <h2>Nous contacter ?</h2>
                 </div>
 
-                    <form action="">
-                            <div>
-                                <label for="email">Email</label>
-                                <input type="text" name="email" id="email">
-                            </div>
-                            <div>
-                                <label for="object">Objet de la demande</label>
-                                <select name="object" id="object">
-                                    <option disabled selected>Choix :</option>
-                                    <option value="particulier">Particulier</option>
-                                    <option value="profesionnel">Profesionnel</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="demande">Votre demande</label>
-                                <textarea name="demande" id="demande" cols="30" rows="10"></textarea>
-                            </div>
-                            <button type="submit">Envoyer</button>
-                        
-                    </form>
-                
-            </div>
+                <form action="">
+                    <div class="input-form">
+                        <div class="label">
+                            <label for="email">Email</label>
+                            <label for="object">Objet de la demande</label>
+                            <label for="demande">Votre demande</label>
+                        </div>
+                        <div class="input">
+                            <input type="text" name="email" id="email">
+                            <select name="object" id="object">
+                                <option disabled selected>Choix :</option>
+                                <option value="particulier">Particulier</option>
+                                <option value="profesionnel">Profesionnel</option><textarea name="demande" id="demande"
+                                    cols="30" rows="3"></textarea>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn-form">
+                        <button type="submit">Envoyer</button>
+                    </div>
+                </form>
 
+            </div>
 
 
             <!-- Map -->
 
-            <div class="maps">
-                <h2>Où sommes-nous ?</h2>
+            <div class="map">
+                <div>
+                    <h2>Où sommes-nous ?</h2>
+                </div>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20247.24938208072!2d3.06215325!3d50.628859799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1702470878275!5m2!1sfr!2sfr"
-                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="550" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
