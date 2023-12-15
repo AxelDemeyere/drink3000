@@ -219,8 +219,10 @@ div video {
     gap: 5rem;
   }
 }
+.recettes section .hidden {
+  display: none;
+}
 .recettes section #card1 {
-  display: flex;
   flex-direction: column;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
   background-color: #E20614;
@@ -283,7 +285,6 @@ div video {
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 .recettes section #card2 {
-  display: flex;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
   flex-direction: column;
   background-color: #A0C525;
@@ -346,7 +347,6 @@ div video {
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 .recettes section #card3 {
-  display: flex;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
   flex-direction: column;
   background-color: #C94C05;

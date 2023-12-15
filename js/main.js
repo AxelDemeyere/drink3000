@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+    window.onscroll = function () {
+        scrollFunction();
+    };
 /* Pour navbar en scrollant */
 function scrollFunction() {
     let navbar = document.querySelector(".header");
@@ -5,8 +9,8 @@ function scrollFunction() {
 
      if (scrollTop < 50) {
         navbar.style.display = "none";
-     }
-     else {
+
+    } else {
         navbar.style.display = "flex";
      }
 }
@@ -23,12 +27,6 @@ function startTransition() {
         test.classList.remove("slide-left");
     }
 }
-  
-    window.onscroll = function () {
-        startTransition();
-        scrollFunction();
-    };
-    
 
 /* Animation de scroll down pour flèche sur vidéo*/
 document.getElementById('scroll-anchor').addEventListener('click', function (event) {
@@ -57,5 +55,46 @@ function displayChoice() {
 displayChoice();
 
 function displayCategory() {
-    let
+    let btncat1 = document.querySelector("#energyCat");
+    let btncat2 = document.querySelector("#freshCat");
+    let btncat3 = document.querySelector("#allCat");
+
+    btncat1.addEventListener("click", () => {
+        let cat1 = document.querySelector("#card1");
+        let cat2 = document.querySelector("#card2");
+        let cat3 = document.querySelector("#card3");
+
+        cat1.classList.remove("hidden");
+        cat2.classList.add("hidden");
+        cat3.classList.remove("hidden");
+    });
+
+    btncat2.addEventListener("click", () => {
+        let cat1 = document.querySelector("#card1");
+        let cat2 = document.querySelector("#card2");
+        let cat3 = document.querySelector("#card3");
+
+        cat1.classList.add("hidden");
+        cat2.classList.remove("hidden");
+        cat3.classList.add("hidden");
+    });
+
+    btncat3.addEventListener("click", () => {
+        let cat1 = document.querySelector("#card1");
+        let cat2 = document.querySelector("#card2");
+        let cat3 = document.querySelector("#card3");
+
+        cat1.classList.remove("hidden");
+        cat2.classList.remove("hidden");
+        cat3.classList.remove("hidden");
+    });
 }
+
+displayCategory();
+
+
+function disableDrinks() {
+
+}
+
+});
