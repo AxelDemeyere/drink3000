@@ -23,22 +23,36 @@ html {
   scroll-behavior: smooth;
 }
 
-.logo-header {
+#header-test {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 100vw;
+  background-color: rgba(70, 70, 70, 0);
   color: white;
-  font-weight: lighter;
-}
-.logo-header h1 {
-  font-family: gilroy;
   font-size: 5rem;
+  padding-top: 1rem;
+  animation: transform 0.5s ease-in-out;
+}
+
+#header-test.slideLeft {
+  transform: translateX(-100%);
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 .header {
+  display: none;
   position: fixed;
   z-index: 1;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
   animation: slideDown 0.5s ease-in-out;
 }
 .header .header-container {
@@ -49,6 +63,16 @@ html {
   backdrop-filter: blur(1px);
   min-width: 100vw;
   padding: 2rem 5rem;
+}
+.header .header-container .logo-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.header .header-container .logo-header h1 {
+  font-family: gilroy;
+  font-size: 5rem;
 }
 .header .header-container .logo {
   color: white;
@@ -102,6 +126,13 @@ html {
 div {
   position: relative;
 }
+div .video-text {
+  position: absolute;
+  top: 50%;
+  right: 35%;
+  font-size: 3rem;
+  color: white;
+}
 div #background {
   height: 100vh;
   width: 100%;
@@ -133,20 +164,17 @@ div .down-arrow:after {
   transform: rotateZ(45deg);
   cursor: pointer;
 }
-div .down-arrow:after video {
+div video {
   width: 100%;
   max-height: 110vh;
   z-index: 0;
 }
 @keyframes jumpInfinite {
-  0% {
+  0%, 100% {
     margin-top: 0;
   }
   50% {
     margin-top: 20px;
-  }
-  100% {
-    margin-top: 0;
   }
 }
 

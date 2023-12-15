@@ -2,29 +2,52 @@
 @use "reset";
 @use 'mixin' as m;
 
+$white-color: white;
+$black-color: #464646;
+$bg-color: rgba(0, 0, 0, 0.5);
+$shadow-color: rgba(0, 0, 0, 0.5);
 
 html {
     scroll-behavior: smooth;
 }
 
-.logo-header {
+
+
+// Header        
+#header-test {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-weight: lighter;
-
-    h1 {
-        font-family: gilroy;
-        font-size: 5rem;
-    }
+    min-width: 100vw;
+    background-color: #46464600;
+    color: $white-color;
+    font-size: 5rem;
+    padding-top: 1rem;
+    animation: transform 0.5s ease-in-out;
 }
 
-// Header
+#header-test.slideLeft {
+    transform: translateX(-100%);
+    
+@keyframes slideLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+}    
+
+
+
 .header {
+    display: none;
     position: fixed;
     z-index: 1;
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 16px $shadow-color;
     animation: slideDown 0.5s ease-in-out;
 
     // Contenu du header
@@ -32,16 +55,27 @@ html {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: $bg-color;
         backdrop-filter: blur(1px);
         min-width: 100vw;
         padding: 2rem 5rem;
+
+        .logo-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $white-color;
+
+            h1 {
+                font-family: gilroy;
+                font-size: 5rem;
+            }
+        }
 
         // Logo à gauche
         .logo {
             color: white;
             font-weight: lighter;
-
         }
 
         // Navbar à droite
@@ -96,14 +130,23 @@ html {
                 transform: translateY(0);
             }
         }
+
+
     }
 }
 
-// Vidéo header + flèche
+// Video and Arrow
 div {
     position: relative;
 
-    // Video
+    .video-text {
+        position: absolute;
+        top:50%;
+        right: 35%;
+        font-size: 3rem;
+        color: white;
+    }
+
     #background {
         height: 100vh;
         width: 100%;
@@ -111,10 +154,9 @@ div {
         z-index: -1;
     }
 
-    // Flèche
     .down-arrow {
         cursor: pointer;
-        color: white;
+        color: $white-color;
         position: absolute;
         right: 50%;
         top: 90%;
@@ -123,42 +165,39 @@ div {
         border: 2px solid;
         border-radius: 2px;
         animation: jumpInfinite 1.5s infinite;
-    }
 
-    .down-arrow:after {
-        content: " ";
-        position: absolute;
-        top: 12px;
-        left: -8px;
-        width: 16px;
-        height: 16px;
-        border-bottom: 4px solid;
-        border-right: 4px solid;
-        border-radius: 4px;
-        transform: rotateZ(45deg);
-        cursor: pointer;
-
-        video {
-            width: 100%;
-            max-height: 110vh;
-            z-index: 0;
+        &:after {
+            content: " ";
+            position: absolute;
+            top: 12px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            border-bottom: 4px solid;
+            border-right: 4px solid;
+            border-radius: 4px;
+            transform: rotateZ(45deg);
+            cursor: pointer;
         }
     }
 
+    video {
+        width: 100%;
+        max-height: 110vh;
+        z-index: 0;
+    }
+
     @keyframes jumpInfinite {
-        0% {
+
+        0%,
+        100% {
             margin-top: 0;
         }
 
         50% {
             margin-top: 20px;
         }
-
-        100% {
-            margin-top: 0;
-        }
     }
-
 }
 
 
@@ -191,10 +230,6 @@ div {
         flex-direction: column;
         min-height: 65vh;
     }
-
-
-
-
 
     section {
         margin-top: 2rem;
@@ -447,7 +482,7 @@ div {
     align-items: center;
     justify-content: center;
 
-    h3{
+    h3 {
         font-size: 1.6rem;
         padding-bottom: 2rem;
     }
@@ -464,13 +499,11 @@ div {
         justify-content: center;
         text-align: center;
     }
-
 }
 
 
 // Références
 .references {
-
     .titre {
         @include m.section-titles;
     }

@@ -1,19 +1,34 @@
 /* Pour navbar en scrollant */
 function scrollFunction() {
-    navbar = document.querySelector(".header");
-    header = document.querySelector(".header-logo");
-    if (document.documentElement.scrollTop < 200) {
+    let navbar = document.querySelector(".header");
+    let scrollTop = window.scrollY;
+
+     if (scrollTop < 50) {
         navbar.style.display = "none";
-        
-    } else {
+     }
+     else {
         navbar.style.display = "flex";
-        header.style.display = "none";
-    }
+     }
 }
 
-window.onscroll = function () {
-    scrollFunction();
-};
+
+function startTransition() {
+    let test = document.getElementById("header-test");
+    let scroll = window.scrollY;
+    console.log(scroll);
+
+    if (scroll > 50) {
+    test.classList.add("slide-left");
+    } else {
+        test.classList.remove("slide-left");
+    }
+}
+  
+    window.onscroll = function () {
+        startTransition();
+        scrollFunction();
+    };
+    
 
 /* Animation de scroll down pour flèche sur vidéo*/
 document.getElementById('scroll-anchor').addEventListener('click', function (event) {
